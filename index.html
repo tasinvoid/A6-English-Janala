@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- poppints-font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontAwsome -->
+    <script
+      src="https://kit.fontawesome.com/7916c65fd7.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .spinner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+        display: none;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .poppins {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .poppins-semibold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      .poppins-bold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .poppins-extrabold {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+      }
+      .bangla {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .bangla-semibold {
+        font-family: "Hind Siliguri", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+      .inter {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+      }
+      .active {
+        background-color: #422ad5;
+        color: white;
+      }
+      .active-img {
+        filter: brightness(0) invert(1);
+      }
+    </style>
+  </head>
+  <script src="./index.js"></script>
+  <body class="poppins">
+    <nav
+      class="bg-[#e9e9e9] border-b-gray-300 fixed w-full z-50 top-0 shadow-xs hidden"
+      id="navBar"
+    >
+      <div class="w-11/12 mx-auto flex justify-between py-5">
+        <div class="flex justify-center items-center">
+          <p class="text-xl font-bold">English</p>
+          <img src="/assets/logo.png" alt="" />
+          <p class="text-xl">জানালা</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="#faq">
+            <button
+              class="border-1 border-[#422AD5] rounded-sm px-3 py-2 text-[#422AD5] flex items-center justify-center gap-2"
+            >
+              <img src="/assets/fa-circle-question.png" alt="" />
+              <p>FAQ</p>
+            </button></a
+          >
+          <a href="#vocabulary">
+            <button
+              class="border-1 border-[#422AD5] rounded-sm px-3 py-2 text-[#422AD5] flex items-center justify-center gap-2"
+            >
+              <img src="/assets/fa-book-open.png" alt="" />
+              <p>Learn</p>
+            </button></a
+          >
+          <button
+            class="border-1 border-[#422AD5] rounded-sm px-3 py-2 text-[#422AD5] flex items-center justify-center gap-2"
+            onclick="showHiddenSec()"
+          >
+            <img src="/assets/fa-arrow-right-from-bracket.png" alt="" />
+            <p>Logout</p>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <section
+      id="hero-section"
+      class="w-11/12 mx-auto flex justify-between mt-5"
+    >
+      <div class="flex flex-col gap-8 justify-center">
+        <h1 class="text-blue-400 font-bold text-6xl">
+          English <span class="text-black">is Easy!!</span>
+        </h1>
+        <p class="text-2xl bangla text-wrap">
+          আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+          <br />
+          আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br />
+          যাবে অন্য একটি Level এ
+        </p>
+        <div class="flex flex-col gap-5">
+          <input
+            type="text"
+            placeholder="Enter Your Name"
+            class="input input-primary"
+            id="name"
+            value="t"
+          />
+          <input
+            type="password"
+            placeholder="Enter Your Password"
+            class="input input-primary"
+            id="password"
+            value="123456"
+          />
+          <button
+            onclick="checkPassword()"
+            class="btn btn-primary w-fit text-xl px-5 py-3"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+      <div>
+        <img
+          class="h-[732px] w-[732px]"
+          src="/assets/hero-student.png"
+          alt=""
+        />
+      </div>
+    </section>
+    <div id="vocabulary" class="py-10 hidden">
+      <section class="flex flex-col items-center my-46">
+        <h1 class="font-extrabold text-5xl py-5">
+          <span class="text-blue-400">Let's</span> Learn Vocabularies
+        </h1>
+        <div id="lessons-container" class="py-10 flex gap-3"></div>
+        <!-- spinner -->
+
+        <div class="bg-gray-100 w-11/12 mx-auto p-10 rounded-4xl">
+          <div class="spinner-container">
+            <div id="spinner" class="spinner" style="display: none"></div>
+          </div>
+          <div id="card-container" class="gap-10">
+            <div class="py-20" id="defaultText">
+              <p class="bangla text-sm text-center py-5">
+                আপনি এখনো কোন Lesson Select করেন !
+              </p>
+              <p class="bangla-semibold text-4xl font-extrabold text-center">
+                একটি Lesson Select করুন।
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="faq" class="py-10 hidden">
+      <section class="w-11/12 mx-auto my-30 mb-64">
+        <h1 class="font-extrabold text-5xl py-10 text-center">
+          <span class="text-blue-400">Frequently</span> Asked Questions
+        </h1>
+        <!-- accordion -->
+        <div
+          class="collapse collapse-arrow bg-base-100 border border-base-300 bg-gray-100 rounded-2xl my-5"
+        >
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title font-semibold">
+            Whats the difference between var, let, and const?
+          </div>
+          <div class="collapse-content text-sm text-gray-500">
+            Var is function-scoped, hoisted, and allows redeclaration. Let is
+            block-scoped and can be reassigned but not redeclared. Const is
+            block-scoped and can't be reassigned, but object contents can
+            change. Use const by default, let when needed, and avoid var.
+          </div>
+        </div>
+        <!-- accordion -->
+        <div
+          class="collapse collapse-arrow bg-base-100 border border-base-300 bg-gray-100 rounded-2xl my-5"
+        >
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title font-semibold">
+            Whats the difference between map(), forEach(), and filter()?
+          </div>
+          <div class="collapse-content text-sm text-gray-500">
+            Map returns a new array by transforming each element. forEach runs a
+            function on each element but returns nothing. Filter creates a new
+            array with elements that pass a test. Map and filter are pure,
+            forEach is for side effects.
+          </div>
+        </div>
+        <!-- accordion -->
+        <div
+          class="collapse collapse-arrow bg-base-100 border border-base-300 bg-gray-100 rounded-2xl my-5"
+        >
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title font-semibold">
+            Explain arrow functions and how they are different from regular
+            functions
+          </div>
+          <div class="collapse-content text-sm text-gray-500">
+            Arrow functions are shorter syntax with implicit returns. They don't
+            have their own 'this', 'arguments', or 'super', inheriting from
+            parent scope instead. Can't be constructors or methods. Great for
+            callbacks and one-liners but less flexible than regular functions.
+          </div>
+        </div>
+        <!-- accordion -->
+        <div
+          class="collapse collapse-arrow bg-base-100 border border-base-300 bg-gray-100 rounded-2xl my-5"
+        >
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title font-semibold">
+            How JavaScript Promises work?
+          </div>
+          <div class="collapse-content text-sm text-gray-500">
+            Promises handle async operations. They're objects with pending,
+            fulfilled, or rejected states. Create with new Promise(). Chain with
+            .then() for success and .catch() for errors. Can compose multiple
+            promises with Promise.all() or Promise.race(). Async/await makes
+            them look synchronous.
+          </div>
+        </div>
+        <!-- accordion -->
+        <div
+          class="collapse collapse-arrow bg-base-100 border border-base-300 bg-gray-100 rounded-2xl my-5"
+        >
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title font-semibold">
+            How closures work in JavaScript?
+          </div>
+          <div class="collapse-content text-sm text-gray-500">
+            Closures happen when functions remember the environment where they
+            were created. Inner functions can access outer function variables
+            even after the outer function finishes. They're used for data
+            privacy, factory functions, and maintaining state. Basically, they
+            keep variables alive when they'd normally disappear.
+          </div>
+        </div>
+      </section>
+    </div>
+    <dialog id="wordDetailModal" class="modal">
+      <div class="modal-box">
+        <div
+          class="flex flex-col gap-7 p-5 border border-blue-200 rounded-md"
+          id="modal-items"
+        ></div>
+
+        <div class="modal-action flex justify-start">
+          <form method="dialog">
+            <button class="btn bg-blue-600 rounded-lg text-white">
+              Complete Learning
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <footer class="border border-t-red-100">
+      <div class="w-11/12 mx-auto flex justify-between items-center py-24">
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center">
+            <p class="text-xl font-bold">English</p>
+            <img src="/assets/logo.png" alt="" />
+            <p class="text-xl">জানালা</p>
+          </div>
+          <p class="bangla-semibold">ইংরেজি শিখুন সহজে</p>
+          <p class="text-sm text-gray-500">
+            Providing ED-Tech Applications since 2025
+          </p>
+        </div>
+
+        <div>
+          <p class="text-center py-5">Follow us</p>
+          <div class="flex gap-4">
+            <a href="https://www.youtube.com/" target="_blank"
+              ><img class="h-[29px]" src="/assets/youtube-thumb.png" alt=""
+            /></a>
+            <a href="https://www.facebook.com/" target="_blank">
+              <img class="h-[29px]" src="/assets/fb-thumb.png" alt=""
+            /></a>
+
+            <a href="https://www.instagram.com/" target="_blank"
+              ><img class="h-[29px]" src="/assets/instagram-thumb.png" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
